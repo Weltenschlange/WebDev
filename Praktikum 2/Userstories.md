@@ -1,6 +1,6 @@
 # User-Stories
 
-| Nr. | Titel | Als | möchte ich | , sodass ich
+| # | Titel | Als | möchte ich | , sodass ich
 | -- | -- | -- | -- | --
 | 1 | Projekterstellung | Nutzer | ein neues Projekt anlegen können | das Projekt verwalten kann
 | 2 | Projektplanung | Nutzer | aus einer Liste von Arbeitsschritten und Artefakten spezifische auswählen können | die wahrscheinlich benötigte Arbeitszeit berechnen kann
