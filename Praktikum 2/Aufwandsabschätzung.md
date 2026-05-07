@@ -16,8 +16,8 @@ Diese beinhalten Planung, entwickeln der Basis für das Programm, UI/UX Design u
 
 ## c) Aufwandsabschätzung
 
-| # | Aufgabe | Stunden | Begründung
-| -- | -- | -- |
+| # | Aufgabe | Stunden | Begründung 
+| -- | -- | -- | --
 | 1 | Planung | 3 | Einfache Planung und Einigung auf genutzte Technologien
 | 2 | Basis | 8 | Entwickeln eines Ausgangspunkt für spätere Module, inkl. Datenbank und Server
 | 3 | UI/UX | 7 | Konzeptionierung, Einigung auf Design und Implementation
