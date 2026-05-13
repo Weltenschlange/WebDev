@@ -2,9 +2,9 @@
 
 ## a) Strategie
 
-Wir schätzen den Aufwand der die Userstories einzeln ab.
+Wir schätzen den Aufwand der Userstories einzeln ab.
 
-Die Zuordnung basiert primär auf Erfahrungswerten, aber auch an weiteren Merkmalen.
+Die Zuordnung basiert primär auf Erfahrungswerten, aber auch auf weiteren Merkmalen des spezifischen Moduls.
 Diese können die Anzahl der Interaktionen mit anderen Modulen innerhalb des Programms, die Komplexität der Anforderung für den spezifischen Aspekt des Programms oder einfach die Relevanz für das Gesamtprodukt des spezifischen Moduls sein.
 
 ## b) Herangezogene Kennzahlen
@@ -16,7 +16,7 @@ Diese beinhalten Planung, entwickeln der Basis für das Programm, UI/UX Design u
 
 ## c) Aufwandsabschätzung
 
-| # | Aufgabe | Stunden | Begründung 
+| # | Aufgabe | Stunden | Begründung
 | -- | -- | -- | --
 | 1 | Planung | 3 | Einfache Planung und Einigung auf genutzte Technologien
 | 2 | Basis | 8 | Entwickeln eines Ausgangspunkt für spätere Module, inkl. Datenbank und Server
