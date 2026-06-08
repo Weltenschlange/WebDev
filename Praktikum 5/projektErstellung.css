@@ -5,3 +5,7 @@
 .hidden-input {
     display: none;
 }
+
+#hover-group:hover {
+    background-color: #87CEFA;
+}
