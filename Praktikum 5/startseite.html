@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="startseite.css">
         <title>Startseite</title>
         <meta charset="UTF-8">
         <meta name="description" content="Projektverwaltungsanwendung">
@@ -29,23 +30,27 @@
             <a href="projektUebersichtsseite.html" id="nav-link">Projekte</a>
             <a href="projektErstellung.html" id="nav-link">Neues Projekt</a>
         </nav>
-        <h1> 
-            Willkommen auf dieser super coolen Projektverwaltungsseite! 
-            <br> 
-            Hier findet man ganz tolle Projekte. 
+        <h1 id="mainText"> 
+            <span id="line1">Willkommen auf dieser super coolen Projektverwaltungsseite! </span>
+            <span  id="line2">Hier findet man ganz tolle Projekte. </span>
         </h1>
-        <section>
-            <h2>Dies ist die Startseite. Und hier ein kurzes Video dazu:</h2>
-            <p>und hier ein cooles Video:</p>
+        <div id="split">
+            <section>
+                <h2>Dies ist die Startseite. Und hier ein kurzes Video dazu:</h2>
+                <p>und hier ein cooles Video:</p>
+                
+            </section>
             <iframe src="assets/vid.mp4"></iframe>
-        </section>
-
-        <h3>Neuste Projekte</h3>
-        <ul>
-            <li>Projekt 1</li>
-            <li>Projekt 2</li>
-            <li>Projekt 3</li>
-        </ul>
+    
+            <div>
+                <h3>Neuste Projekte</h3>
+                <ul>
+                    <li>Projekt 1</li>
+                    <li>Projekt 2</li>
+                    <li>Projekt 3</li>
+                </ul>
+            </div>
+        </div>
         <footer>
             <a href="https://store.steampowered.com/legal/?l=german">Impressum</a>
             <a href="https://store.steampowered.com/privacy_agreement/">Datenschutzerklärung</a>
