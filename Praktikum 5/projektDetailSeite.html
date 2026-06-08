@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="projektDetail.css">
         <title>Projekt Detail Seite</title>
         <meta charset="UTF-8">
         <meta name="description" content="Projektverwaltungsanwendung">
@@ -30,45 +31,54 @@
             <a href="projektErstellung.html" id="nav-link">Neues Projekt</a>
         </nav>
 
-        <h1>Projektdetailseite</h1>
+        <div id="main">
+            <div id="sidebar">
+                <h3>Bereiche</h3>
+                <ul>
+                    <li><a href="#Logo">Logo</a></li>
+                    <li><a href="#Projekttitel">Projekttitel</a></li>
+                    <li><a href="#Projektleiter">Projektleiter</a></li>
+                    <li><a href="#Kurzbeschreibung">Kurzbeschreibung</a></li>
+                    <li><a href="#Langbeschreibung">Langbeschreibung</a></li>
+                    <li><a href="#Projektziele">Projektziele</a></li>
+                </ul>
+            </div>
+            <div id="content">
+                <h1>Projektdetailseite</h1>
+                <div id="title">
+                    <img src="assets/logo.png" alt="Logo" id="Logo">
+                    <h2 id="Projekttitel">Projekttitel</h2>
+                    <h5 id="Projektleiter">Projektleiter: Elias Kehne</h5>
+                </div>
+        
+                <h3 id="Kurzbeschreibung">Kurzbeschreibung</h3>
+                <p>Dies ist eine sehr kurze Beschreibung.</p>
+                <br>
+                <h3 id="Langbeschreibung">Langbeschreibung</h3>
+                <p>Dies ist eine sehr lange Beschreibung. Sie ist so lang, dass sie hier bestimmt bald nicht mehr hin passt.</p>
+                <br>
+                <h3 id="Projektziele">Projektziele</h3>
+                <ol>
+                    <li>Lastenheft</li>
+                    <li>Pflichtenheft</li>
+                    <li>Prototyp</li>
+                    <li>Endprodukt</li>
+                </ol>
+                <br>
 
-        <img src="assets/logo.png" alt="Logo" id="Logo">
-        <h2 id="Projekttitel">Projekttitel</h2>
-        <h5 id="Projektleiter">Projektleiter: Elias Kehne</h5>
+                <form action="blanco.html">
+                    <input id="Kommentar" type="textarea" name="Kommentar">
+                    <input type="radio" name="stars"> 1
+                    <input type="radio" name="stars"> 2
+                    <input type="radio" name="stars"> 3
+                    <input type="radio" name="stars"> 4
+                    <input type="radio" name="stars" checked> 5
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
 
-        <h3 id="Kurzbeschreibung">Kurzbeschreibung</h3>
-        <p>Dies ist eine sehr kurze Beschreibung.</p>
-        <br>
-        <h3 id="Langbeschreibung">Langbeschreibung</h3>
-        <p>Dies ist eine sehr lange Beschreibung. Sie ist so lang, dass sie hier bestimmt bald nicht mehr hin passt.</p>
-        <br>
-        <h3 id="Projektziele">Projektziele</h3>
-        <ol>
-            <li>Lastenheft</li>
-            <li>Pflichtenheft</li>
-            <li>Prototyp</li>
-            <li>Endprodukt</li>
-        </ol>
-        <br>
-        <h3>Bereiche</h3>
-        <ul>
-            <li><a href="#Logo">Logo</a></li>
-            <li><a href="#Projekttitel">Projekttitel</a></li>
-            <li><a href="#Projektleiter">Projektleiter</a></li>
-            <li><a href="#Kurzbeschreibung">Kurzbeschreibung</a></li>
-            <li><a href="#Langbeschreibung">Langbeschreibung</a></li>
-            <li><a href="#Projektziele">Projektziele</a></li>
-        </ul>
+        </div>
 
-        <form action="blanco.html">
-            <input type="textarea" name="Kommentar">
-            <input type="radio" name="stars"> 1
-            <input type="radio" name="stars"> 2
-            <input type="radio" name="stars"> 3
-            <input type="radio" name="stars"> 4
-            <input type="radio" name="stars" checked> 5
-            <input type="submit" value="Submit">
-        </form>
         <footer>
             <a href="https://store.steampowered.com/legal/?l=german">Impressum</a>
             <a href="https://store.steampowered.com/privacy_agreement/">Datenschutzerklärung</a>
