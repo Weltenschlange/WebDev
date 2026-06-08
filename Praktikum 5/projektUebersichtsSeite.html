@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="projektUebersichtsSeite.css">
         <title>Projekt Übersichts Seite</title>
         <meta charset="UTF-8">
         <meta name="description" content="Projektverwaltungsanwendung">
@@ -32,21 +33,31 @@
 
         <h1>Projekt-Übersichtsseite</h1>
 
+        <div id="filter">Filter
+            <div id="filter-options">
+                <input type="checkbox" name="filter"> Rezension erhalten
+                <input type="radio" name="status-filter" checked> In Bearbeitung
+                <input type="radio" name="status-filter"> Fertig
+                <input type="radio" name="time-filter" checked> Neuste Zuerst
+                <input type="radio" name="time-filter"> Älteste Zuerst
+            </div>
+        </div>
+
         <ul>
-            <li>Projekt 1</li>
+            <li id="proj-header">Projekt 1</li>
             <ul>
-                <li>Coole Projektbeschreibung 1</li>
-                <li><a href="projektDetailSeite.html">Projektseite</a></li>
+                <li id="short-desc">Coole Projektbeschreibung 1</li>
+                <li><a href="projektDetailSeite.html" id="proj-footer">Projektseite</a></li>
             </ul>
-            <li>Projekt 2</li>
+            <li id="proj-header">Projekt 2</li>
             <ul>
-                <li>Wilde Projektbeschreibung 2</li>
-                <li><a href="projektDetailSeite2.html">Projektseite</a></li>
+                <li id="short-desc">Wilde Projektbeschreibung 2</li>
+                <li><a href="projektDetailSeite2.html" id="proj-footer">Projektseite</a></li>
             </ul>
-            <li>Projekt 3</li>
+            <li id="proj-header">Projekt 3</li>
             <ul>
-                <li>Herausragende Projektbeschreibung 3</li>
-                <li><a href="projektDetailSeite.html">Projektseite</a></li>
+                <li id="short-desc">Herausragende Projektbeschreibung 3</li>
+                <li><a href="projektDetailSeite.html" id="proj-footer">Projektseite</a></li>
             </ul>
         </ul>
         <footer>
