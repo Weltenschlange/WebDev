@@ -1,5 +1,11 @@
+#invis-input {
+    background-color: #e1f88e;
+    border-width: 1px;
+}
+
 #description {
     width: 100%;
+    background-color: #e1f88e;
 }
 
 .hidden-input {
