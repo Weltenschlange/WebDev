@@ -6,12 +6,8 @@ html, body {
     flex-direction: column;
 }
 
-body {
-    overflow: hidden;
-}
-
 #mainText {
-    font-size: 120px;
+    font-size: 80px;
     display:flex; 
     justify-content: center;
     flex-direction: column;
@@ -31,7 +27,6 @@ body {
     justify-content: center;
     flex-direction: row;
     gap: 40px;
-    overflow: auto;
 }
 
 #line1 {
