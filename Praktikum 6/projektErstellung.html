@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="projektErstellung.css">
+        <title>Projekt Erstellung</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Projektverwaltungsanwendung">
+        <meta name="author" content="Christian Dück, Elias Kehne">
+    </head>
+    <body>
+        <header>
+            <picture>
+                <source media=" (min-width: 1920px) " srcset="assets/header1920x200.png">
+                <source media=" (min-width: 1280px) " srcset="assets/header1280x133.png">
+                <source media=" (min-width: 640px) " srcset="assets/header640x67.png">
+                <img src="assets/header320x34.png" alt="header">
+            </picture>
+            <form action="blanco.html" id="login-form">
+                <h3 id="login-text">Login</h3>
+                <label for="username">Username</label>
+                <input type="text" name="username">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+            </form>
+        </header>
+        <nav>
+            <a href="startseite.html" id="nav-link"><img src="assets/startseite.svg" width="50" height="50"></a>
+            <a href="projektUebersichtsseite.html" id="nav-link">Projekte</a>
+            <a href="projektErstellung.html" id="nav-link">Neues Projekt</a>
+        </nav>
+
+        <h1>Projekterstellung</h1>
+
+        <form action="blanco.html">
+            <div id="hover-group">
+                <label for="Projekttitel">Projekttitel</label>
+                <input id="invis-input" type="text" name="Projekttitel">
+            </div>
+            <div id="hover-group">
+                <label for="Startdatum">Startdatum</label>
+                <input id="invis-input" type="date" name="Startdatum ">
+            </div>
+            <div id="hover-group">
+                <label for="Enddatum">Enddatum</label>
+                <input id="invis-input" type="date" name="Enddatum">
+            </div>
+            <div id="hover-group">
+                <label for="Kurzbeschreibung">Kurzbeschreibung</label>
+                <textarea name="Kurzbeschreibung" id="description"></textarea>
+            </div>
+            <div id="hover-group">
+                <label for="Langbeschreibung">Langbeschreibung</label>
+                <textarea name="Langbeschreibung" id="description"></textarea>
+            </div>
+            <div id="hover-group">
+                <label for="Projektziel1">Projektziel1</label>
+                <input id="invis-input" type="text" name="Projektziel">
+            </div>
+            <div id="hover-group">
+                <label for="Projektziel2">Projektziel2</label>
+                <input id="invis-input" type="text" name="Projektziel">
+            </div>
+            <div id="hover-group">
+                <label for="Logo">
+                    <img src="assets/logoInput.png" alt="Bild hochladen">
+                </label>
+                <input type="file" id="Logo" name="Logo" class="hidden-input">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+        <footer>
+            <a href="https://store.steampowered.com/legal/?l=german">Impressum</a>
+            <a href="https://store.steampowered.com/privacy_agreement/">Datenschutzerklärung</a>
+            <a href="https://store.steampowered.com/subscriber_agreement/">Haftungsausschuss</a>
+            <a href="https://store.steampowered.com/legal/?l=german">Copyright</a>
+            <a href="https://help.steampowered.com/de/">Kontakt</a>
+        </footer>
+        <a href="#" id="startlink">Zurück zum Start</a>
+    </body>
+</html>
