@@ -7,7 +7,9 @@ translation.set("Project Goals", ["Project Goals"," Projektziele"])
 translation.set("Project Lead", ["Project Lead", "Projektleitung"])
 translation.set("Comment", ["Comment", "Kommentar"])
 
-var languages = ["English", "Deutsch"]
+var languages = new Map()
+languages.set("EN", 0)
+languages.set("DE", 1)
 
 /* Anmerkungen zu Aufgabe 5
 
