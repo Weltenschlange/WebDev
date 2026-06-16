@@ -78,14 +78,14 @@ class Projekt_Sortierer{
 
 
     anfangsdatum(){
-        return this.projekte.sort((a,b) => {
+        return [...this.projekte].sort((a,b) => {
             return b.startdatum - a.startdatum
         })
     }
 
     laufzeit(){
-        return this.projekte.sort((a,b) => {
-            return projekt_laufzeit_berechnen(a.id) - projekt_laufzeit_berechnen(b.id)
+        return [...this.projekte].sort((a,b) => {
+            return projekt_laufzeit_berechnen(b.id) - projekt_laufzeit_berechnen(a.id)
         })
     }
 }
