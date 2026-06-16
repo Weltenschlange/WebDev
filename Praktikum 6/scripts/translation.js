@@ -1,4 +1,4 @@
-const translation = new Map()
+var translation = new Map()
 translation.set("Project", ["Project", "Projekt"])
 translation.set("Menu", ["Menu", "Menü"])
 translation.set("Short Description", ["Short Description", "Kurzbeschreibung"])
@@ -7,7 +7,7 @@ translation.set("Project Goals", ["Project Goals"," Projektziele"])
 translation.set("Project Lead", ["Project Lead", "Projektleitung"])
 translation.set("Comment", ["Comment", "Kommentar"])
 
-let languages = ["English", "Deutsch"]
+var languages = ["English", "Deutsch"]
 
 /* Anmerkungen zu Aufgabe 5
 

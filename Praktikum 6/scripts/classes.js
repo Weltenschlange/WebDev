@@ -2,18 +2,18 @@ class Projekt {
     constructor(id,titel,kurzbeschreibung,logo,startdatum){
         this.id = id
         this.titel = titel
-        this.kurzbeschreibung = kurzbeschreibung
         this.logo = logo
-        this.startdatum = Date(startdatum)
+        this.startdatum = new Date(startdatum)
+        this.kurzbeschreibung = kurzbeschreibung
     }
 
-    get kurzbeschreibung(){return this.kurzbeschreibung}
+    get kurzbeschreibung(){return this._kurzbeschreibung}
     set kurzbeschreibung(s){
-        str = String(s)
-        if(str.lengh > 255){
+        let str = String(s)
+        if(str.length > 255){
             throw new Error("String to long")
         }
-        this.kurzbeschreibung = str
+        this._kurzbeschreibung = str
     }
 }
 
@@ -24,13 +24,13 @@ class Aufgabenbereich {
         this.kurzbeschreibung = kurzbeschreibung;
     }
     
-    get kurzbeschreibung(){return this.kurzbeschreibung}
+    get kurzbeschreibung(){return this._kurzbeschreibung}
     set kurzbeschreibung(s){
-        str = String(s)
-        if(str.lengh > 255){
+        let str = String(s)
+        if(str.length > 255){
             throw new Error("String to long")
         }
-        this.kurzbeschreibung = str
+        this._kurzbeschreibung = str
     }
 }
 
@@ -43,13 +43,13 @@ class Artefakt {
         this.zeitaufwand = zeitaufwand
     }
     
-    get kurzbeschreibung(){return this.kurzbeschreibung}
+    get kurzbeschreibung(){return this._kurzbeschreibung}
     set kurzbeschreibung(s){
-        str = String(s)
-        if(str.lengh > 255){
+        let str = String(s)
+        if(str.length > 255){
             throw new Error("String to long")
         }
-        this.kurzbeschreibung = str
+        this._kurzbeschreibung = str
     }
 }
 
@@ -76,9 +76,10 @@ class Projekt_Sortierer{
         this.projekte = projekte
     }
 
+
     anfangsdatum(){
         return this.projekte.sort((a,b) => {
-            return a.startdatum - b.startdatum
+            return b.startdatum - a.startdatum
         })
     }
 
