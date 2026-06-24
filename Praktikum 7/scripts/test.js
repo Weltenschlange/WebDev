@@ -41,6 +41,9 @@ getJsons().then(jsons => {
     artefactsResponse = jsons[2]
 
     console.log(projectsResponse)
+    console.log(tasksResponse)
+    console.log(artefactsResponse)
+    console.log("------------")
     
     // AUFGABE 3
     
@@ -50,22 +53,30 @@ getJsons().then(jsons => {
     
     let count = 1
     for (task of tasksResponse) {
-        aufgabenbereiche.push(task.id, task.name, task.shortdesc)
-        projekt_aufgabenbereiche.push(count, task.project, task.id)
+        aufgabenbereiche.push(new Aufgabenbereich(task.id, task.name, task.shortdesc))
+        projekt_aufgabenbereiche.push(new Projekt_Aufgabenbereich(count, task.project, task.id))
         count++
     }
     
     count = 1
     for (arti of artefactsResponse) {
-        artefakte.push(arti.id, arti.name, arti.shortdesc, arti.taskid, arti.planedtime)
-        count++
+        artefakte.push(new Artefakt(arti.id, arti.name, arti.shortdesc, arti.taskid, arti.planedtime))
         
         for (proj_aufg of projekt_aufgabenbereiche) {
             if (proj_aufg.id == arti.taskid) {
-                projekt_artefakt.push(count, proj_aufg.projektID, arti.id, arti.realtime)
+                projekt_artefakt.push(new Projekt_Artefakt(count, proj_aufg.projektID, arti.id, arti.realtime))
+                count++
             }
         }
     }
+
+    console.log("------------")
+    console.log(projects)
+    console.log(aufgabenbereiche)
+    console.log(projekt_aufgabenbereiche)
+    console.log(artefakte)
+    console.log(projekt_artefakt)
+    console.log("------------")
 
     // AUFGABE 4
 
@@ -73,8 +84,8 @@ getJsons().then(jsons => {
 
     if (!bufferItem) {
         projectSend = bufferItem[0]
-        aufgabenbereicheSend = bufferItem[0]
-        artefakteSend = bufferItem[0]
+        aufgabenbereicheSend = bufferItem[1]
+        artefakteSend = bufferItem[2]
     } else {
         projectSend = projects[0]
         aufgabenbereicheSend = aufgabenbereiche[0]
