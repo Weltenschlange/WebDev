@@ -1,0 +1,47 @@
+[
+	{
+		"id": 1,
+		"projektID": 1,
+		"aufgabenbereichsID": 1
+	},
+	{
+		"id": 2,
+		"projektID": 1,
+		"aufgabenbereichsID": 2
+	},
+	{
+		"id": 3,
+		"projektID": 1,
+		"aufgabenbereichsID": 3
+	},
+	{
+		"id": 4,
+		"projektID": 2,
+		"aufgabenbereichsID": 4
+	},
+	{
+		"id": 5,
+		"projektID": 2,
+		"aufgabenbereichsID": 5
+	},
+	{
+		"id": 6,
+		"projektID": 2,
+		"aufgabenbereichsID": 6
+	},
+	{
+		"id": 7,
+		"projektID": 3,
+		"aufgabenbereichsID": 7
+	},
+	{
+		"id": 8,
+		"projektID": 3,
+		"aufgabenbereichsID": 8
+	},
+	{
+		"id": 9,
+		"projektID": 3,
+		"aufgabenbereichsID": 9
+	}
+]

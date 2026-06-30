@@ -1,0 +1,135 @@
+[
+	{
+		"id": 1,
+		"titel": "Projekt 1 - ER-Diagramm",
+		"kurzbeschreibung": "ER-Diagramm erstellen",
+		"aufgabenbereichsID": 1,
+		"zeitaufwand": "7:30"
+	},
+	{
+		"id": 2,
+		"titel": "Projekt 1 - Klassen-Diagramm",
+		"kurzbeschreibung": "Klassen-Diagramm erstellen",
+		"aufgabenbereichsID": 1,
+		"zeitaufwand": "5:00"
+	},
+	{
+		"id": 3,
+		"titel": "Projekt 1 - UserStories",
+		"kurzbeschreibung": "User-Stories erstellen",
+		"aufgabenbereichsID": 1,
+		"zeitaufwand": "2:00"
+	},
+	{
+		"id": 4,
+		"titel": "Projekt 1 - Webseitegerüst",
+		"kurzbeschreibung": "Webseitegerüst erstellen",
+		"aufgabenbereichsID": 2,
+		"zeitaufwand": "2:00"
+	},
+	{
+		"id": 5,
+		"titel": "Projekt 1 - Startseite",
+		"kurzbeschreibung": "Startseite erstellen",
+		"aufgabenbereichsID": 2,
+		"zeitaufwand": "3:00"
+	},
+	{
+		"id": 6,
+		"titel": "Projekt 1 - Projektübersicht",
+		"kurzbeschreibung": "Projektübersicht erstellen",
+		"aufgabenbereichsID": 2,
+		"zeitaufwand": "3:00"
+	},
+	{
+		"id": 7,
+		"titel": "Projekt 1 - Projekt-anlegen-Seite",
+		"kurzbeschreibung": "Projekt-anlegen-Seite erstellen",
+		"aufgabenbereichsID": 2,
+		"zeitaufwand": "5:00"
+	},
+	{
+		"id": 8,
+		"titel": "Projekt 1 - Weitere Seiten",
+		"kurzbeschreibung": "Weitere Seiten erstellen",
+		"aufgabenbereichsID": 2,
+		"zeitaufwand": "1:00"
+	},
+	{
+		"id": 9,
+		"titel": "Projekt 1 - Wöchentliche Fehlerbehebungen",
+		"kurzbeschreibung": "Wöchentliche Fehlerbehebungen",
+		"aufgabenbereichsID": 3,
+		"zeitaufwand": "3:00"
+	},
+	{
+		"id": 10,
+		"titel": "Werre Frühwarnsystem - UserStories",
+		"kurzbeschreibung": "UserStories erstellen",
+		"aufgabenbereichsID": 4,
+		"zeitaufwand": "10:00"
+	},
+	{
+		"id": 11,
+		"titel": "Werre Frühwarnsystem - ER-Diagramm",
+		"kurzbeschreibung": "ER-Diagramm erstellen",
+		"aufgabenbereichsID": 4,
+		"zeitaufwand": "5:30"
+	},
+	{
+		"id": 12,
+		"titel": "Werre Frühwarnsystem - Klassen-Diagramme",
+		"kurzbeschreibung": "Klassen-Diagramme erstellen",
+		"aufgabenbereichsID": 4,
+		"zeitaufwand": "40:00"
+	},
+	{
+		"id": 13,
+		"titel": "Werre Frühwarnsystem - Einarbeitung SmartMonitoring",
+		"kurzbeschreibung": "Einarbeitung SmartMonitoring",
+		"aufgabenbereichsID": 5,
+		"zeitaufwand": "10:00"
+	},
+	{
+		"id": 14,
+		"titel": "Werre Frühwarnsystem - Anbdingung Datenquellen",
+		"kurzbeschreibung": "Anbindung freier Datenquellen",
+		"aufgabenbereichsID": 5,
+		"zeitaufwand": "80:00"
+	},
+	{
+		"id": 15,
+		"titel": "Werre Frühwarnsystem - Erstellung Dashboard",
+		"kurzbeschreibung": "Erstellung eines Dashboards",
+		"aufgabenbereichsID": 5,
+		"zeitaufwand": "16:00"
+	},
+	{
+		"id": 16,
+		"titel": "Planung des Ablaufs",
+		"kurzbeschreibung": "Planung des Ablaufs der Party",
+		"aufgabenbereichsID": 7,
+		"zeitaufwand": "25:00"
+	},
+	{
+		"id": 17,
+		"titel": "Organisation Bands",
+		"kurzbeschreibung": "Bands organisieren",
+		"aufgabenbereichsID": 7,
+		"zeitaufwand": "10:00"
+	},
+	{
+		"id": 18,
+		"titel": "Feiern",
+		"kurzbeschreibung": "Die Party findet statt.",
+		"aufgabenbereichsID": 8,
+		"zeitaufwand": "5:00"
+	},
+	{
+		"id": 19,
+		"titel": "Aufräumen",
+		"kurzbeschreibung": "Danach muss alles wieder aufgeräumt werden.",
+		"aufgabenbereichsID": 9,
+		"zeitaufwand": "15:00"
+	}
+]
