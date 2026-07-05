@@ -1,0 +1,37 @@
+[
+	{
+		"id": 1,
+		"titel": "Implementierung des Projektmanagers",
+		"logo": "https://scl.fh-bielefeld.de/WBA/projectmanager.avif",
+		"startdatum": "2024-04-01T08:20:28.438Z",
+		"kurzbeschreibung": "Das Semesterprojekt für WBA."
+	},
+	{
+		"id": 2,
+		"titel": "Hochwasserfrühwarnsystem",
+		"logo": "https://scl.fh-bielefeld.de/WBA/werre.avif",
+		"startdatum": "2024-10-01T08:20:28.438Z",
+		"kurzbeschreibung": "KI basiertes Hochwasserfrühwarnsystem"
+	},
+	{
+		"id": 3,
+		"titel": "SoSe Party!",
+		"logo": "https://scl.fh-bielefeld.de/WBA/party.jpg",
+		"startdatum": "2024-04-01T08:20:28.438Z",
+		"kurzbeschreibung": "Die große Sommersemester Party"
+	},
+	{
+		"id": 4,
+		"titel": "Projekt ohne Arbeit",
+		"logo": "https://scl.fh-bielefeld.de/WBA/urlaub.avif",
+		"startdatum": "2024-07-01T08:20:28.438Z",
+		"kurzbeschreibung": "Dieses Projekt hat keine Arbeit"
+	},
+	{
+		"id": 5,
+		"titel": "Das nächste tolle Projekt",
+		"logo": "https://scl.fh-bielefeld.de/WBA/neu.avif",
+		"startdatum": "2025-04-01T08:20:28.438Z",
+		"kurzbeschreibung": "Hier entsteht ein neues Projekt"
+	}
+]

@@ -1,0 +1,116 @@
+[
+	{
+		"id": 1,
+		"projekt_id": 1,
+		"artefakt_id": 1,
+		"arbeits_zeit": 470
+	},
+	{
+		"id": 2,
+		"projekt_id": 1,
+		"artefakt_id": 2,
+		"arbeits_zeit": 270
+	},
+	{
+		"id": 3,
+		"projekt_id": 1,
+		"artefakt_id": 3,
+		"arbeits_zeit": 120
+	},
+	{
+		"id": 4,
+		"projekt_id": 1,
+		"artefakt_id": 4,
+		"arbeits_zeit": 120
+	},
+	{
+		"id": 5,
+		"projekt_id": 1,
+		"artefakt_id": 5,
+		"arbeits_zeit": 180
+	},
+	{
+		"id": 6,
+		"projekt_id": 1,
+		"artefakt_id": 6,
+		"arbeits_zeit": 190
+	},
+	{
+		"id": 7,
+		"projekt_id": 1,
+		"artefakt_id": 7,
+		"arbeits_zeit": 0
+	},
+	{
+		"id": 8,
+		"projekt_id": 1,
+		"artefakt_id": 8,
+		"arbeits_zeit": 0
+	},
+	{
+		"id": 9,
+		"projekt_id": 1,
+		"artefakt_id": 9,
+		"arbeits_zeit": 0
+	},
+	{
+		"id": 10,
+		"projekt_id": 2,
+		"artefakt_id": 10,
+		"arbeits_zeit": 710
+	},
+	{
+		"id": 11,
+		"projekt_id": 2,
+		"artefakt_id": 11,
+		"arbeits_zeit": 350
+	},
+	{
+		"id": 12,
+		"projekt_id": 2,
+		"artefakt_id": 12,
+		"arbeits_zeit": 2520
+	},
+	{
+		"id": 13,
+		"projekt_id": 2,
+		"artefakt_id": 13,
+		"arbeits_zeit": 580
+	},
+	{
+		"id": 14,
+		"projekt_id": 2,
+		"artefakt_id": 14,
+		"arbeits_zeit": 4950
+	},
+	{
+		"id": 15,
+		"projekt_id": 2,
+		"artefakt_id": 15,
+		"arbeits_zeit": 0
+	},
+	{
+		"id": 16,
+		"projekt_id": 3,
+		"artefakt_id": 16,
+		"arbeits_zeit": 0
+	},
+	{
+		"id": 17,
+		"projekt_id": 3,
+		"artefakt_id": 17,
+		"arbeits_zeit": 0
+	},
+	{
+		"id": 18,
+		"projekt_id": 3,
+		"artefakt_id": 18,
+		"arbeits_zeit": 0
+	},
+	{
+		"id": 19,
+		"projekt_id": 3,
+		"artefakt_id": 19,
+		"arbeits_zeit": 0
+	}
+]
