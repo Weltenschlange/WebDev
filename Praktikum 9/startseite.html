@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/startseite.css">
+        <title>Startseite</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Projektverwaltungsanwendung">
+        <meta name="author" content="Christian Dück, Elias Kehne">
+
+        <script src="scripts/classes.js"></script>
+        <script src="scripts/functions.js"></script>
+        <script src="scripts/translation.js"></script>
+        <script src="scripts/test.js"></script>
+    </head>
+    <body>
+        <header>
+            <picture>
+                <source media=" (min-width: 1920px) " srcset="assets/header1920x200.png">
+                <source media=" (min-width: 1280px) " srcset="assets/header1280x133.png">
+                <source media=" (min-width: 640px) " srcset="assets/header640x67.png">
+                <img src="assets/header320x34.png" alt="header">
+            </picture>
+            <form action="blanco.html" id="login-form">
+                <h3 id="login-text">Login</h3>
+                <label for="username">Username</label>
+                <input type="text" name="username">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+            </form>
+        </header>
+        <nav>
+            <a href="startseite.html" id="nav-link"><img src="assets/startseite.svg" width="50" height="50"></a>
+            <a href="projektUebersichtsseite.html" id="nav-link">Projekte</a>
+            <a href="projektErstellung.html" id="nav-link">Neues Projekt</a>
+        </nav>
+        <h1 id="mainText"> 
+            <span id="line1">Willkommen auf dieser super coolen Projektverwaltungsseite! </span>
+            <span  id="line2">Hier findet man ganz tolle Projekte. </span>
+        </h1>
+        <div id="split">
+            <section>
+                <h2>Dies ist die Startseite. Und hier ein kurzes Video dazu:</h2>
+                <p>und hier ein cooles Video:</p>
+                
+            </section>
+            <iframe src="assets/vid.mp4"></iframe>
+    
+            <div>
+                <h3>Neuste Projekte</h3>
+                <ul>
+                    <li>Projekt 1</li>
+                    <li>Projekt 2</li>
+                    <li>Projekt 3</li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <a href="https://store.steampowered.com/legal/?l=german">Impressum</a>
+            <a href="https://store.steampowered.com/privacy_agreement/">Datenschutzerklärung</a>
+            <a href="https://store.steampowered.com/subscriber_agreement/">Haftungsausschuss</a>
+            <a href="https://store.steampowered.com/legal/?l=german">Copyright</a>
+            <a href="https://help.steampowered.com/de/">Kontakt</a>
+        </footer>
+        <a href="#" id="startlink">Zurück zum Start</a>
+    </body>
+</html>
