@@ -79,11 +79,11 @@ public class HelloResource {
         float min;
         float max;
         try{
-            ResultSet rs = max(table, column);
-            rs = min(table, column);
+            ResultSet rsMax = max(table, column);
+            ResultSet rsMin = min(table, column);
             
-            if (rs.next()){
-                min = rs.getFloat(1);
+            if (rsMin.next()){
+                min = rsMin.getFloat(1);
             }
             else{
                 ResponseBuilder rb = Response.status(500);
@@ -91,8 +91,8 @@ public class HelloResource {
                 return rb.build();
             }
             
-            if (rs.next()){
-                max = rs.getFloat(1);
+            if (rsMax.next()){
+                max = rsMax.getFloat(1);
             }
             else{
                 ResponseBuilder rb = Response.status(500);
