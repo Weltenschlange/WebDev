@@ -2,6 +2,7 @@ package test;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -29,54 +30,111 @@ public class HelloResource {
     @Path("/min/{table}/{column}")
     public Response APIMin(@PathParam("table") String table, @PathParam("column") String column){
 
-        return min(table, column);
-    }
-    @GET
-    @Path("/max/{table}/{column}")
-    public float APIMax(@PathParam("table") String table, @PathParam("column") String column){
-        
-        return max(table, column);
-    }
-    // @GET
-    // @Path("/span/{table}/{column}")
-    // public float APISpan(@PathParam("table") String table, @PathParam("column") String column){
-        
-    //     return max(table, column) - min(table, column);
-    // }
-
-    public Response min(String table, String column){
-        String query = "SELECT MIN(" + column + ") FROM \"" + table + "\"";
-
-        try {
-            ResultSet rs = db.query(query);
+        try{
+            ResultSet rs = min(table, column);
+            
             if (rs.next()){
                 ResponseBuilder rb = Response.status(200);
                 rb.entity("{\"value\": " + rs.getFloat(1) + "}");
                 return rb.build();
             }
-        } catch (SQLException e) {
-            System.out.println(e);
+            else{
+                ResponseBuilder rb = Response.status(500);
+                rb.entity("{\"error\": " + "no min value found" + "}");
+                return rb.build();
+            }
+        }
+        catch (Exception e){
             ResponseBuilder rb = Response.status(500);
-            rb.entity("{\"error\": " + e + "}");
+            rb.entity("{\"error\": " + e.getMessage() + "}");
+            return rb.build();
+        }
+    }
+    @GET
+    @Path("/max/{table}/{column}")
+    public Response APIMax(@PathParam("table") String table, @PathParam("column") String column){
+        try{
+            ResultSet rs = max(table, column);
+            
+            if (rs.next()){
+                ResponseBuilder rb = Response.status(200);
+                rb.entity("{\"value\": " + rs.getFloat(1) + "}");
+                return rb.build();
+            }
+            else{
+                ResponseBuilder rb = Response.status(500);
+                rb.entity("{\"error\": " + "no max value found" + "}");
+                return rb.build();
+            }
+        }
+        catch (Exception e){
+            ResponseBuilder rb = Response.status(500);
+            rb.entity("{\"error\": " + e.getMessage() + "}");
+            return rb.build();
+        }
+    }
+    @GET
+    @Path("/minmaxspan/{table}/{column}")
+    public Response minmaxspan(@PathParam("table") String table, @PathParam("column") String column){
+        float min;
+        float max;
+        try{
+            ResultSet rs = max(table, column);
+            rs = min(table, column);
+            
+            if (rs.next()){
+                min = rs.getFloat(1);
+            }
+            else{
+                ResponseBuilder rb = Response.status(500);
+                rb.entity("{\"error\": " + "no max value found" + "}");
+                return rb.build();
+            }
+            
+            if (rs.next()){
+                max = rs.getFloat(1);
+            }
+            else{
+                ResponseBuilder rb = Response.status(500);
+                rb.entity("{\"error\": " + "no max value found" + "}");
+                return rb.build();
+            }
+
+        }
+        catch (Exception e){
+            ResponseBuilder rb = Response.status(500);
+            rb.entity("{\"error\": " + e.getMessage() + "}");
             return rb.build();
         }
 
-        ResponseBuilder rb = Response.status(500);
-        rb.entity("{\"error\": \"This should not appear\"}");
+        ResponseBuilder rb = Response.status(200);
+        Map<String, Float> body = Map.of(
+        "min", min,
+        "max", max,
+        "span", max - min);
+        rb.entity(body);
+
         return rb.build();
+
     }
 
-    public float max(String table, String column){
+    public ResultSet min(String table, String column) throws SQLException{
+        String query = "SELECT MIN(" + column + ") FROM \"" + table + "\"";
+
+        try {
+            return db.query(query);
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
+    public ResultSet max(String table, String column) throws SQLException{
         String query = "SELECT MAX(" + column + ") FROM " + table;
 
         try {
-            ResultSet rs = db.query(query);
-            if (rs.next()){
-                return rs.getFloat(1);
-            }
+            return db.query(query);
         } catch (SQLException e) {
-            System.out.println(e);
+            throw e;
         }
-        return -169.0f;
     }
 }
