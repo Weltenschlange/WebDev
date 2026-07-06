@@ -4,7 +4,7 @@
 		"name": "Projekt 1 - ER-Diagramm",
 		"shortdesc": "ER-Diagramm erstellen",
 		"longdesc": "Ein ER-Diagramm für den Projektmanager",
-		"planedtime": "7:30",
+		"planedtime": 450,
 		"realtime": "7:50",
 		"taskid": 1
 	},
@@ -13,7 +13,7 @@
 		"name": "Projekt 1 - Klassen-Diagramm",
 		"shortdesc": "Klassen-Diagramm erstellen",
 		"longdesc": "Ein Klassen-Diagramm für den Projektmanager",
-		"planedtime": "5:00",
+		"planedtime": 300,
 		"realtime": "4:30",
 		"taskid": 1
 	},
@@ -22,60 +22,9 @@
 		"name": "Projekt 1 - UserStories",
 		"shortdesc": "User-Stories erstellen",
 		"longdesc": "Die UserStories für den Projektmanager",
-		"planedtime": "2:00",
+		"planedtime": 120,
 		"realtime": "2:10",
 		"taskid": 1
-	},
-	{
-		"id": 4,
-		"name": "Projekt 1 - Webseitegerüst",
-		"shortdesc": "Webseitegerüst erstellen",
-		"longdesc": "Das Webseitegerüst für den Projektmanager",
-		"planedtime": "2:00",
-		"realtime": "1:40",
-		"taskid": 2
-	},
-	{
-		"id": 5,
-		"name": "Projekt 1 - Startseite",
-		"shortdesc": "Startseite erstellen",
-		"longdesc": "Die Startseite für den Projektmanager",
-		"planedtime": "3:00",
-		"realtime": "2:40",
-		"taskid": 2
-	},
-	{
-		"id": 6,
-		"name": "Projekt 1 - Projektübersicht",
-		"shortdesc": "Projektübersicht erstellen",
-		"longdesc": "Die Projektübersicht für den Projektmanager",
-		"planedtime": "3:00",
-		"realtime": "3:10",
-		"taskid": 2
-	},
-	{
-		"id": 7,
-		"name": "Projekt 1 - Projekt-anlegen-Seite",
-		"shortdesc": "Projekt-anlegen-Seite erstellen",
-		"longdesc": "Die Projekt-anlegen-Seite für den Projektmanager",
-		"planedtime": "5:00",
-		"taskid": 2
-	},
-	{
-		"id": 8,
-		"name": "Projekt 1 - Weitere Seiten",
-		"shortdesc": "Weitere Seiten erstellen",
-		"longdesc": "Die wieteren Seiten für den Projektmanager",
-		"planedtime": "1:00",
-		"taskid": 2
-	},
-	{
-		"id": 9,
-		"name": "Projekt 1 - Wöchentliche Fehlerbehebungen",
-		"shortdesc": "Wöchentliche Fehlerbehebungen",
-		"longdesc": "Wöchentliche Fehlerbehebungen für den Projektmanager",
-		"planedtime": "3:00",
-		"taskid": 3
 	},
 	{
 		"id": 10,

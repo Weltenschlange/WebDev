@@ -129,7 +129,7 @@ public class HelloResource {
     }
 
     public ResultSet max(String table, String column) throws SQLException{
-        String query = "SELECT MAX(" + column + ") FROM " + table;
+        String query = "SELECT MAX(" + column + ") FROM \"" + table + "\"";
 
         try {
             return db.query(query);
