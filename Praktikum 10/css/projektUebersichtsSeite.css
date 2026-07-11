@@ -1,0 +1,36 @@
+#short-desc {
+    background-color: beige;
+    padding: 5px;
+}
+
+#proj-header {
+    background-color: #1B1C1D;
+    color: white;
+    font-size: 150%;
+    margin-top: 10px;
+}
+
+#proj-footer {
+    background-color: #1B1C1D;
+    color: white;
+    padding: 0px;
+}
+
+#proj-footer a {
+    color: white;
+}
+
+#filter {
+    background-color: green;
+    padding: 5px;
+    border-radius: 2px;
+    width: fit-content;
+}
+
+#filter-options {
+    display: none;
+}
+
+#filter:hover #filter-options {
+    display: block;
+}

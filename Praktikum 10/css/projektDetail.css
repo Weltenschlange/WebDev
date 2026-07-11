@@ -1,0 +1,51 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: black;
+    width: 200px;
+}
+
+ul li:hover{
+    background-color: #87CEFA
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar {
+    border-right: 3px solid red;
+}
+
+#content {
+    flex: 1;
+    margin: 5px;
+    scroll-padding-top: 80px
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    background: green;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#Projekttitel {
+    margin: 0 10px;
+}
+#Projektleiter {
+    margin-left: auto;
+}
+
+#Kommentar{
+    background: transparent;
+    border:  1px solid #ccc;
+    outline: none;
+}
+#Kommentar:focus{
+    background: white;
+}

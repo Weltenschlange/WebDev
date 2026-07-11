@@ -1,0 +1,60 @@
+body {
+  background: #e1f88e;
+  overflow-x: hidden;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+header {
+  width: screen;
+  display: flex;
+  flex-direction: row;
+}
+
+nav {
+  background: black;
+  border: 3px solid #00BFFF;
+}
+
+#startlink {
+  background-color: green;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 3px;
+}
+
+#login-form {
+  background-color: rgb(168, 241, 72);
+  position: relative;
+  right:5px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+#login-text {
+  display:flex; 
+  justify-content: center;
+  margin: 0px;
+}
+
+#nav-link {
+  font-size: 150%;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 5px;
+}
+
+#nav-link:hover {
+  background-color: #87CEFA;
+}
