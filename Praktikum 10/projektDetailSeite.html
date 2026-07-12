@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name="description" content="Projektverwaltungsanwendung">
         <meta name="author" content="Christian Dück, Elias Kehne">
+        <script src="scripts/translation.js"></script>
     </head>
     <body>
         <header>
@@ -27,20 +28,20 @@
         </header>
         <nav>
             <a href="startseite.html" id="nav-link"><img src="assets/startseite.svg" width="50" height="50"></a>
-            <a href="projektUebersichtsseite.html" id="nav-link">Projekte</a>
-            <a href="projektErstellung.html" id="nav-link">Neues Projekt</a>
+            <a href="projektUebersichtsseite.html" id="nav-link" name="NavProject">Projekte</a>
+            <a href="projektErstellung.html" id="nav-link" name="NavNewProject">Neues Projekt</a>
         </nav>
 
         <div id="main">
             <div id="sidebar">
                 <h3>Bereiche</h3>
                 <ul>
-                    <li><a href="#Logo">Logo</a></li>
-                    <li><a href="#Projekttitel">Projekttitel</a></li>
-                    <li><a href="#Projektleiter">Projektleiter</a></li>
-                    <li><a href="#Kurzbeschreibung">Kurzbeschreibung</a></li>
-                    <li><a href="#Langbeschreibung">Langbeschreibung</a></li>
-                    <li><a href="#Projektziele">Projektziele</a></li>
+                    <li><a href="#Logo" name="linkLogo">Logo</a></li>
+                    <li><a href="#Projekttitel" name="linkTitle">Projekttitel</a></li>
+                    <li><a href="#Projektleiter" name="linkLeader">Projektleiter</a></li>
+                    <li><a href="#Kurzbeschreibung" name="linkShortDescription">Kurzbeschreibung</a></li>
+                    <li><a href="#Langbeschreibung" name="linklongDescription">Langbeschreibung</a></li>
+                    <li><a href="#Projektziele" name="linkGoal">Projektziele</a></li>
                 </ul>
             </div>
             <div id="content">
