@@ -6,6 +6,24 @@ ul {
     width: 200px;
 }
 
+#sidebar ul ul {
+    background: transparent;
+    width: auto;
+    padding-left: 1rem;
+}
+
+#sidebar ul ul li {
+    padding-left: 0.25rem;
+}
+
+#sidebar ul ul li.toc-level-2 {
+    margin-left: 0.25rem;
+}
+
+#sidebar ul ul li.toc-level-3 {
+    margin-left: 0.5rem;
+}
+
 ul li:hover{
     background-color: #87CEFA
 }
@@ -25,6 +43,12 @@ ul li:hover{
     scroll-padding-top: 80px
 }
 
+#content h1,
+#content h2,
+#content h3 {
+    scroll-margin-top: 90px;
+}
+
 #title {
     display: flex;
     flex-direction: row;
@@ -39,6 +63,17 @@ ul li:hover{
 }
 #Projektleiter {
     margin-left: auto;
+}
+
+#projekt-fehler {
+    color: darkred;
+    font-weight: bold;
+}
+
+#projekt-langbeschreibung h1,
+#projekt-langbeschreibung h2,
+#projekt-langbeschreibung h3 {
+    margin-top: 1.2rem;
 }
 
 #Kommentar{

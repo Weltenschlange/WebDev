@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded",() => {
 //Aufgabe 2
 
 function ladeNeuesteProjekte() {
+    const liste = document.getElementById('neuesteProjekteListe');
+
+    if (!liste) {
+        return;
+    }
+
     fetch('test.json')
         .then(response => {
             if (!response.ok) {
@@ -43,6 +49,11 @@ function ladeNeuesteProjekte() {
 
 function zeigeProjekteAn(projekte) {
     const liste = document.getElementById('neuesteProjekteListe');
+
+    if (!liste) {
+        return;
+    }
+
     liste.innerHTML = '';
 
     projekte.forEach(projekt => {
@@ -77,6 +88,12 @@ document.addEventListener('DOMContentLoaded', ladeNeuesteProjekte);
 let alleProjekte = [];
 
 function ladeAlleProjekte() {
+    const liste = document.getElementById('projektListe');
+
+    if (!liste) {
+        return;
+    }
+
     fetch('test.json')
         .then(response => {
             if (!response.ok) {
@@ -125,6 +142,11 @@ function sortiereProjekte(projekte, kriterium) {
 
 function zeigeProjektUebersichtAn(projekte) {
     const liste = document.getElementById('projektListe');
+
+    if (!liste) {
+        return;
+    }
+
     liste.innerHTML = '';
 
     projekte.forEach(projekt => {
@@ -160,6 +182,10 @@ function initSortierFilter() {
     const datumRadios = document.querySelectorAll('input[name="datum-filter"]');
     const laufzeitRadios = document.querySelectorAll('input[name="laufzeit-filter"]');
 
+    if (!datumRadios.length && !laufzeitRadios.length) {
+        return;
+    }
+
     datumRadios.forEach(radio => {
         radio.addEventListener('change', () => {
             laufzeitRadios.forEach(r => r.checked = false);
@@ -181,3 +207,4 @@ document.addEventListener('DOMContentLoaded', () => {
     ladeAlleProjekte();
     initSortierFilter();
 });
+
