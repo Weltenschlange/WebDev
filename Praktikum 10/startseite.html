@@ -11,7 +11,7 @@
         <script src="scripts/classes.js"></script>
         <script src="scripts/functions.js"></script>
         <script src="scripts/translation.js"></script>
-        <script src="scripts/test.js"></script>
+        <script src="scripts/all.js"></script>
     </head>
     <body>
         <header>
@@ -21,13 +21,16 @@
                 <source media=" (min-width: 640px) " srcset="assets/header640x67.png">
                 <img src="assets/header320x34.png" alt="header">
             </picture>
-            <form action="blanco.html" id="login-form">
+            <form id="login-form">
                 <h3 id="login-text">Login</h3>
                 <label for="username">Username</label>
                 <input type="text" name="username">
                 <label for="password">Password</label>
                 <input type="password" name="password">
                 <input type="submit" value="Submit">
+            </form>
+            <form id="logout-form" style="display: none">
+                <input type="submit" value="Logout">
             </form>
         </header>
         <nav>
