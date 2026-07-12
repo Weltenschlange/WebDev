@@ -5,9 +5,12 @@ import java.sql.SQLException;
 import java.util.Map;
 
 import jakarta.json.Json;
+import jakarta.json.JsonArray;
 import jakarta.json.JsonArrayBuilder;
 import jakarta.json.JsonObject;
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -263,6 +266,64 @@ public class HelloResource {
         }
     }
 
+    @POST
+    @Path("/NewProject")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createProject(JsonObject projectJson) {
+        try{
+            String titel = projectJson.getString("titel", null);
+            String logo = projectJson.getString("logo", null);
+            String startdatum = projectJson.getString("startdatum", null);
+            String kurzbeschreibung = projectJson.getString("kurzbeschreibung", null);
+            String langbeschreibung = projectJson.getString("langbeschreibung", null);
+            JsonArray  artefaktIDs = projectJson.getJsonArray("artefaktIDs");
+
+            String query = "INSERT INTO \"Projekt\" (titel, logo, startdatum, kurzbeschreibung, langbeschreibung) " +
+                    "VALUES ( " + titel + ", " + logo + ", " + startdatum + ", " + kurzbeschreibung + ", " + langbeschreibung + ")";
+
+
+            int projectId = -1;
+            try(ResultSet rs = db.query(query)) {
+                if (rs.next()) {
+                    projectId = rs.getInt(1);
+                }
+            }
+            catch (Exception e) {
+                ResponseBuilder rb = Response.status(Response.Status.INTERNAL_SERVER_ERROR);
+                rb.entity("{\"error\": \"" + e.getMessage() + "\"}");
+                return rb.build();
+            }
+
+            if (projectId == -1){
+                ResponseBuilder rb = Response.status(Response.Status.INTERNAL_SERVER_ERROR);
+                rb.entity("{\"error\": \"no project id created\"}");
+                return rb.build();
+            }
+
+            for (int i = 0; i < artefaktIDs.size(); i++) {
+                int id = artefaktIDs.getInt(i);
+                String query2 = "INSERT INTO \"Projekt_Artefakt\" (projekt_id, artefakt_id) VALUES ("+ projectId +", " + id + ")";
+                try(ResultSet rs = db.query(query)) {
+                
+                }
+                catch (Exception e) {
+                    ResponseBuilder rb = Response.status(Response.Status.INTERNAL_SERVER_ERROR);
+                    rb.entity("{\"error\": \"" + e.getMessage() + "\"}");
+                    return rb.build();
+                }
+            }
+
+            ResponseBuilder rb = Response.status(Response.Status.CREATED);
+            return rb.build();
+
+        } catch (Exception e) {
+            ResponseBuilder rb = Response.status(Response.Status.INTERNAL_SERVER_ERROR);
+            rb.entity("{\"error\": \"" + e.getMessage() + "\"}");
+            return rb.build();
+        }
+    }
+    
     public ResultSet min(String table, String column) throws SQLException{
         String query = "SELECT MIN(" + column + ") FROM \"" + table + "\"";
 
