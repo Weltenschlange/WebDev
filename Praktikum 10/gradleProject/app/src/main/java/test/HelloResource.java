@@ -122,6 +122,76 @@ public class HelloResource {
     }
 
     @GET
+    @Path("/Projects/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response ProjectsID(@PathParam("id") String projectId) {
+        try {
+            JsonArrayBuilder projectsArray = Json.createArrayBuilder();
+
+            ResultSet projectRS = db.query("SELECT * FROM \"Projekt\" WHERE id = " + projectId);
+
+            while (projectRS.next()) {
+                int id = projectRS.getInt(1);
+                String title = projectRS.getString(2);
+                String logo = projectRS.getString(3);
+                String startdatum = projectRS.getString(4);
+                String kurzbeschreibung = projectRS.getString(5);
+
+                JsonArrayBuilder artefactsArray = Json.createArrayBuilder();
+
+                ResultSet artefactRS = db.query(
+                    "SELECT a.*, pa.arbeits_zeit FROM \"Artefakt\" a " +
+                    "JOIN \"Projekt_Artefakt\" pa ON a.id = pa.artefakt_id " +
+                    "WHERE pa.projekt_id = " + id
+                );
+
+                while (artefactRS.next()) {
+                    int artId = artefactRS.getInt(1);
+                    String artTitle = artefactRS.getString(2);
+                    String artKurzbeschreibung = artefactRS.getString(3);
+                    int artAufgabenbereichsId = artefactRS.getInt(4);
+                    int artZeitaufwand = artefactRS.getInt(5);
+                    int projArtZeitaufwand = artefactRS.getInt(6);
+
+                    JsonObject artefactObj = Json.createObjectBuilder()
+                            .add("id", artId)
+                            .add("titel", artTitle)
+                            .add("kurzbeschreibung", artKurzbeschreibung)
+                            .add("aufgabenbereichsId", artAufgabenbereichsId)
+                            .add("zeitaufwand", artZeitaufwand)
+                            .add("projektZeitaufwand", projArtZeitaufwand)
+                            .build();
+
+                    artefactsArray.add(artefactObj);
+                }
+                artefactRS.close();
+
+                JsonObject projectObj = Json.createObjectBuilder()
+                        .add("id", id)
+                        .add("titel", title)
+                        .add("logo", logo)
+                        .add("startdatum", startdatum)
+                        .add("kurzbeschreibung", kurzbeschreibung)
+                        .add("artefakte", artefactsArray.build())
+                        .build();
+
+                projectsArray.add(projectObj);
+            }
+            projectRS.close();
+
+            String jsonResult = projectsArray.build().toString();
+
+            ResponseBuilder rb = Response.ok(jsonResult, MediaType.APPLICATION_JSON);
+            return rb.build();
+
+        } catch (Exception e) {
+            ResponseBuilder rb = Response.status(Response.Status.INTERNAL_SERVER_ERROR);
+            rb.entity("{\"error\": \"" + e.getMessage() + "\"}");
+            return rb.build();
+        }
+    }
+
+    @GET
     @Path("/Projects")
     @Produces(MediaType.APPLICATION_JSON)
     public Response Projects() {
