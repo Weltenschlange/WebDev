@@ -15,8 +15,6 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.ResponseBuilder;
 
-import java.sql.*;
-
 // http://localhost:8080/app/db/hello
 @Path("/db")
 public class HelloResource {
@@ -136,6 +134,7 @@ public class HelloResource {
                 String logo = projectRS.getString(3);
                 String startdatum = projectRS.getString(4);
                 String kurzbeschreibung = projectRS.getString(5);
+                String langbeschreibung = projectRS.getString(6);
 
                 JsonArrayBuilder artefactsArray = Json.createArrayBuilder();
 
@@ -172,6 +171,7 @@ public class HelloResource {
                         .add("logo", logo)
                         .add("startdatum", startdatum)
                         .add("kurzbeschreibung", kurzbeschreibung)
+                        .add("langbeschreibung", langbeschreibung)
                         .add("artefakte", artefactsArray.build())
                         .build();
 
@@ -206,6 +206,7 @@ public class HelloResource {
                 String logo = projectRS.getString(3);
                 String startdatum = projectRS.getString(4);
                 String kurzbeschreibung = projectRS.getString(5);
+                String langbeschreibung = projectRS.getString(6);
 
                 JsonArrayBuilder artefactsArray = Json.createArrayBuilder();
 
@@ -242,6 +243,7 @@ public class HelloResource {
                         .add("logo", logo)
                         .add("startdatum", startdatum)
                         .add("kurzbeschreibung", kurzbeschreibung)
+                        .add("langbeschreibung", langbeschreibung)
                         .add("artefakte", artefactsArray.build())
                         .build();
 
