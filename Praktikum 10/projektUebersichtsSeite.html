@@ -41,29 +41,26 @@
         <div id="filter">Filter
             <div id="filter-options">
                 <input type="checkbox" name="filter"> Rezension erhalten
+
                 <input type="radio" name="status-filter" checked> In Bearbeitung
                 <input type="radio" name="status-filter"> Fertig
-                <input type="radio" name="time-filter" checked> Neuste Zuerst
-                <input type="radio" name="time-filter"> Älteste Zuerst
+
+                <fieldset>
+                    <legend>Sortieren nach Anfangsdatum</legend>
+                    <input type="radio" name="datum-filter" id="datum-neu" value="datum-neu" checked> Neuste Zuerst
+                    <input type="radio" name="datum-filter" id="datum-alt" value="datum-alt"> Älteste Zuerst
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sortieren nach Laufzeit</legend>
+                    <input type="radio" name="laufzeit-filter" id="laufzeit-lang" value="laufzeit-lang"> Längste Zuerst
+                    <input type="radio" name="laufzeit-filter" id="laufzeit-kurz" value="laufzeit-kurz"> Kürzeste Zuerst
+                </fieldset>
             </div>
         </div>
 
-        <ul>
-            <li id="proj-header">Projekt 1</li>
-            <ul>
-                <li id="short-desc">Coole Projektbeschreibung 1</li>
-                <li><a href="projektDetailSeite.html" id="proj-footer">Projektseite</a></li>
-            </ul>
-            <li id="proj-header">Projekt 2</li>
-            <ul>
-                <li id="short-desc">Wilde Projektbeschreibung 2</li>
-                <li><a href="projektDetailSeite2.html" id="proj-footer">Projektseite</a></li>
-            </ul>
-            <li id="proj-header">Projekt 3</li>
-            <ul>
-                <li id="short-desc">Herausragende Projektbeschreibung 3</li>
-                <li><a href="projektDetailSeite.html" id="proj-footer">Projektseite</a></li>
-            </ul>
+        <ul id="projektListe">
+
         </ul>
         <footer>
             <a href="https://store.steampowered.com/legal/?l=german">Impressum</a>
