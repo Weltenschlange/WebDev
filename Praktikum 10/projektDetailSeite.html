@@ -9,6 +9,7 @@
         <meta name="author" content="Christian Dück, Elias Kehne">
         <script src="scripts/translation.js"></script>
         <script src="scripts/all.js"></script>
+        <script src="scripts/projektDetail.js"></script>
     </head>
     <body>
         <header>
@@ -44,23 +45,30 @@
                     <li><a href="#Projekttitel" name="linkTitle">Projekttitel</a></li>
                     <li><a href="#Projektleiter" name="linkLeader">Projektleiter</a></li>
                     <li><a href="#Kurzbeschreibung" name="linkShortDescription">Kurzbeschreibung</a></li>
-                    <li><a href="#Langbeschreibung" name="linklongDescription">Langbeschreibung</a></li>
+                    <li>
+                        <a href="#Langbeschreibung" name="linklongDescription">Langbeschreibung</a>
+                        <ul id="langbeschreibung-inhaltsverzeichnis"></ul>
+                    </li>
                     <li><a href="#Projektziele" name="linkGoal">Projektziele</a></li>
                 </ul>
             </div>
             <div id="content">
                 <h1>Projektdetailseite</h1>
+                <p id="projekt-fehler"></p>
                 <div id="title">
-                    <img src="assets/logo.png" alt="Logo" id="Logo">
-                    <h2 id="Projekttitel">Projekttitel</h2>
-                    <h5 id="Projektleiter">Projektleiter: Elias Kehne</h5>
+                    <img src="assets/logo.png" alt="Logo" id="projekt-logo">
+                    <div>
+                        <h2 id="projekt-titel">Projekttitel</h2>
+                        <h5 id="projekt-betreuer">Projektleiter: Elias Kehne</h5>
+                        <p id="projekt-zeitraum"></p>
+                    </div>
                 </div>
         
                 <h3 id="Kurzbeschreibung">Kurzbeschreibung</h3>
-                <p>Dies ist eine sehr kurze Beschreibung.</p>
+                <p id="projekt-kurzbeschreibung"></p>
                 <br>
                 <h3 id="Langbeschreibung">Langbeschreibung</h3>
-                <p>Dies ist eine sehr lange Beschreibung. Sie ist so lang, dass sie hier bestimmt bald nicht mehr hin passt.</p>
+                <div id="projekt-langbeschreibung"></div>
                 <br>
                 <h3 id="Projektziele">Projektziele</h3>
                 <ol>
