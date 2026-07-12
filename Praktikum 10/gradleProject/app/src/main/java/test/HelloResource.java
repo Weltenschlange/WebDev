@@ -272,15 +272,15 @@ public class HelloResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response createProject(JsonObject projectJson) {
         try{
-            String titel = projectJson.getString("titel", null);
-            String logo = projectJson.getString("logo", null);
-            String startdatum = projectJson.getString("startdatum", null);
-            String kurzbeschreibung = projectJson.getString("kurzbeschreibung", null);
-            String langbeschreibung = projectJson.getString("langbeschreibung", null);
+            String titel = sqlLiteral(projectJson.getString("titel", null));
+            String logo = sqlLiteral(projectJson.getString("logo", null));
+            String startdatum = sqlLiteral(projectJson.getString("startdatum", null));
+            String kurzbeschreibung = sqlLiteral(projectJson.getString("kurzbeschreibung", null));
+            String langbeschreibung = sqlLiteral(projectJson.getString("langbeschreibung", null));
             JsonArray  artefaktIDs = projectJson.getJsonArray("artefaktIDs");
 
             String query = "INSERT INTO \"Projekt\" (titel, logo, startdatum, kurzbeschreibung, langbeschreibung) " +
-                    "VALUES ( " + titel + ", " + logo + ", " + startdatum + ", " + kurzbeschreibung + ", " + langbeschreibung + ")";
+                    "VALUES (" + titel + ", " + logo + ", " + startdatum + ", " + kurzbeschreibung + ", " + langbeschreibung + ") RETURNING id";
 
 
             int projectId = -1;
@@ -343,5 +343,12 @@ public class HelloResource {
         } catch (SQLException e) {
             throw e;
         }
+    }
+
+    private String sqlLiteral(String value) {
+        if (value == null) {
+            return "NULL";
+        }
+        return "'" + value.replace("'", "''") + "'";
     }
 }

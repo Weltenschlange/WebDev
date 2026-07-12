@@ -11,15 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const logoBase64 = logoFile ? await fileToBase64(logoFile) : null;
 
             const projectData = {
-                titel: form.querySelector('[name="Projekttitel"]').value,
-                logo: logoBase64,
-                startdatum: form.querySelector('[name="Startdatum "]').value,
-                enddatum: form.querySelector('[name="Enddatum"]').value,
-                kurzbeschreibung: form.querySelector('[name="Kurzbeschreibung"]').value,
-                langbeschreibung: form.querySelector('[name="Langbeschreibung"]').value,
+                titel: "{'" + form.querySelector('[name="Projekttitel"]').value + "'}", 
+                logo: "{'" + logoBase64 + "'}",
+                startdatum: "{'" + form.querySelector('[name="Startdatum "]').value + "'}",
+                kurzbeschreibung: "{'" + form.querySelector('[name="Kurzbeschreibung"]').value + "'}",
+                langbeschreibung: "{'" + form.querySelector('[name="Langbeschreibung"]').value + "'}",
                 artefaktIDs: [] // aktuell keine Artefakt-Auswahl im Formular vorhanden
             };
-
+            
             const response = await fetch("http://localhost:8080/app/api/db/NewProject", {
                 method: "POST",
                 headers: {
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 body: JSON.stringify(projectData)
             });
-
             if (!response.ok) {
                 const error = await response.json();
                 alert("Fehler beim Speichern: " + error.error);
