@@ -315,6 +315,7 @@ public class HelloResource {
             }
 
             ResponseBuilder rb = Response.status(Response.Status.CREATED);
+            rb.entity("{\"id\": " + projectId + "}");
             return rb.build();
 
         } catch (Exception e) {
