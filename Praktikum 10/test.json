@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "titel": "{\"Implementierung des Projektmanagers\"}",
+    "logo": "{https://scl.fh-bielefeld.de/WBA/projectmanager.avif%7D",
+    "startdatum": "{2024-04-01T08:20:28.438Z}",
+    "kurzbeschreibung": "{\"Das Semesterprojekt für WBA.\"}",
+    "artefakte": [
+      {
+        "id": 2,
+        "titel": "{\"Projekt 1 - ER-Diagramm\"}",
+        "kurzbeschreibung": "{\"ER-Diagramm erstellen\"}",
+        "aufgabenbereichsId": 1,
+        "zeitaufwand": 450,
+        "projektZeitaufwand": 200
+      },
+      {
+        "id": 3,
+        "titel": "{Klassen-Diagramm}",
+        "kurzbeschreibung": "{\"Klassen-Diagramm erstellen\"}",
+        "aufgabenbereichsId": 1,
+        "zeitaufwand": 300,
+        "projektZeitaufwand": 450
+      },
+      {
+        "id": 4,
+        "titel": "{UserStories}",
+        "kurzbeschreibung": "{\"User-Stories erstellen\"}",
+        "aufgabenbereichsId": 1,
+        "zeitaufwand": 120,
+        "projektZeitaufwand": 890
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titel": "{Hochwasserfrühwarnsystem}",
+    "logo": "{https://scl.fh-bielefeld.de/WBA/werre.avif%7D",
+    "startdatum": "{2024-10-01T08:20:28.438Z}",
+    "kurzbeschreibung": "{\"KI basiertes Hochwasserfrühwarnsystem\"}",
+    "artefakte": [
+      {
+        "id": 5,
+        "titel": "{\"Werre Frühwarnsystem - UserStories\"}",
+        "kurzbeschreibung": "{\"UserStories erstellen\"}",
+        "aufgabenbereichsId": 2,
+        "zeitaufwand": 600,
+        "projektZeitaufwand": 710
+      },
+      {
+        "id": 6,
+        "titel": "{\"Werre Frühwarnsystem - ER-Diagramm\"}",
+        "kurzbeschreibung": "{\"ER-Diagramm erstellen\"}",
+        "aufgabenbereichsId": 2,
+        "zeitaufwand": 330,
+        "projektZeitaufwand": 350
+      }
+    ]
+  },
+{
+    "id": 3,
+    "titel": "{\"SoSe Party!\"}",
+    "logo": "{https://scl.fh-bielefeld.de/WBA/party.jpg%7D",
+    "startdatum": "{2024-04-01T08:20:28.438Z}",
+    "kurzbeschreibung": "{\"Die große Sommersemester Party\"}",
+    "artefakte": [
+      {
+        "id": 7,
+        "titel": "{\"Planung des Ablaufs\"}",
+        "kurzbeschreibung": "{\"Planung des Ablaufs der Party\"}",
+        "aufgabenbereichsId": 3,
+        "zeitaufwand": 1500,
+        "projektZeitaufwand": 0
+      }
+    ]
+  }
+]
