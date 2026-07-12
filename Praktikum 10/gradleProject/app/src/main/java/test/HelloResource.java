@@ -304,7 +304,7 @@ public class HelloResource {
             for (int i = 0; i < artefaktIDs.size(); i++) {
                 int id = artefaktIDs.getInt(i);
                 String query2 = "INSERT INTO \"Projekt_Artefakt\" (projekt_id, artefakt_id) VALUES ("+ projectId +", " + id + ")";
-                try(ResultSet rs = db.query(query)) {
+                try(ResultSet rs = db.query(query2)) {
                 
                 }
                 catch (Exception e) {
