@@ -64,9 +64,11 @@ function bereinigeWert(wert) {
         return wert;
     }
     return wert
-        .replace(/^\{"?/, '')
-        .replace(/"?\}$/, '')
-        .replace(/%7D$/, '');
+        .replace(/^\{"?/, '')   // führendes { oder {" entfernen
+        .replace(/"?\}$/, '')   // abschließendes } oder "} entfernen
+        .replace(/%7D$/, '')   // URL-kodiertes } entfernen (z.B. bei logo)
+        .replace(/\\u003C/,'<')
+        .replace(/\\u003E/,'>');
 }
 document.addEventListener('DOMContentLoaded', ladeNeuesteProjekte);
 
