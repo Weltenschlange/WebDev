@@ -16,7 +16,6 @@ languages.set("de", 1)
 
 language = navigator.language
 idx = languages.get(language)
-idx = 1
 console.log(language)
 
 document.addEventListener("DOMContentLoaded",() => {
