@@ -22,7 +22,7 @@ function initialisiereProjektDetailSeite() {
         return;
     }
 
-    fetch('http://localhost:8080/app/api/db/Projects')
+    fetch('http://localhost:8080/app/api/db/Projects/' + projektId)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Netzwerkfehler: ' + response.status);
@@ -30,9 +30,8 @@ function initialisiereProjektDetailSeite() {
             return response.json();
         })
         .then(projekte => {
-            const projekt = projekte.find(eintrag => String(eintrag.id) === projektId);
-
-            if (!projekt) {
+            projekt = projekte[0]
+            if ((!projekt) || (projekt.id != projektId)) {
                 throw new Error('Projekt mit der ID ' + projektId + ' wurde nicht gefunden.');
             }
 

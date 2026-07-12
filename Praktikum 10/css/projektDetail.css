@@ -13,15 +13,15 @@ ul {
 }
 
 #sidebar ul ul li {
-    padding-left: 0.75rem;
+    padding-left: 0.25rem;
 }
 
 #sidebar ul ul li.toc-level-2 {
-    margin-left: 0.75rem;
+    margin-left: 0.25rem;
 }
 
 #sidebar ul ul li.toc-level-3 {
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
 }
 
 ul li:hover{
