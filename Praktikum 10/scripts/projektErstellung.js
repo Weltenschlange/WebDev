@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
+    const form = document.getElementById("new-project-form");
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 artefaktIDs: [] // aktuell keine Artefakt-Auswahl im Formular vorhanden
             };
 
-            const response = await fetch("http://localhost:8080/app/db/NewProject", {
+            const response = await fetch("http://localhost:8080/app/api/db/NewProject", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const result = await response.json();
-            window.location.href = "projektDarstellung.html?id=" + result.id;
+            window.location.href = "projektDetailSeite.html?id=" + result.id;
 
         } catch (err) {
             console.error("Fehler beim Erstellen des Projekts:", err);
