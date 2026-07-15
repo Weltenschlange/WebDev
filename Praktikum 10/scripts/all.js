@@ -25,7 +25,7 @@ function ladeNeuesteProjekte() {
         return;
     }
 
-    fetch('test.json')
+    fetch('http://localhost:8080/app/api/db/Projects')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Netzwerkfehler: ' + response.status);
@@ -94,7 +94,7 @@ function ladeAlleProjekte() {
         return;
     }
 
-    fetch('test.json')
+    fetch('http://localhost:8080/app/api/db/Projects')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Netzwerkfehler: ' + response.status);

@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initialisiereProjektDetailSeite();
+    kommentare();
 });
 
 function initialisiereProjektDetailSeite() {
@@ -124,4 +125,127 @@ function generiereInhaltsverzeichnis(langbeschreibungElement, tocElement) {
         listenEintrag.appendChild(neueListe);
         stapel.push({ ebene: ebene, liste: neueListe });
     });
+}
+
+function kommentare() {
+    kommentarschreiber()
+    kommentarlader()
+}
+
+function kommentarschreiber() {
+    const kommentarform = document.getElementById('Kommentareingabe');
+    const kommentarEingabe = document.getElementById('Kommentar');
+
+    if (!kommentarform || !kommentarEingabe) {
+        return;
+    }
+
+    kommentarform.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const text = kommentarEingabe.value.trim();
+
+        if (!text) {
+            return;
+        }
+
+        const projektId = new URLSearchParams(window.location.search).get('id');
+        const speicherSchluessel = getKommentarSpeicherSchluessel(projektId);
+        const kommentare = ladeKommentareAusLocalStorage(speicherSchluessel);
+        const ausgewaehlteBewertung = kommentarform.querySelector('input[name="stars"]:checked');
+
+        kommentare.push({
+            text: text,
+            sterne: ausgewaehlteBewertung ? Number(ausgewaehlteBewertung.value) : null,
+            erstelltAm: new Date().toISOString()
+        });
+
+        window.localStorage.setItem(speicherSchluessel, JSON.stringify(kommentare));
+        kommentarEingabe.value = '';
+
+        kommentarlader();
+    });
+}
+
+function kommentarlader() {
+    const kommentarform = document.getElementById('Kommentareingabe');
+
+    if (!kommentarform) {
+        return;
+    }
+
+    const projektId = new URLSearchParams(window.location.search).get('id');
+    const speicherSchluessel = getKommentarSpeicherSchluessel(projektId);
+    const kommentare = ladeKommentareAusLocalStorage(speicherSchluessel);
+
+    let kommentarBereich = document.getElementById('projekt-kommentare');
+
+    if (!kommentarBereich) {
+        kommentarBereich = document.createElement('section');
+        kommentarBereich.id = 'projekt-kommentare';
+
+        const ueberschrift = document.createElement('h3');
+        ueberschrift.textContent = 'Kommentare';
+
+        const kommentarliste = document.createElement('ul');
+        kommentarliste.id = 'projekt-kommentar-liste';
+
+        kommentarBereich.appendChild(ueberschrift);
+        kommentarBereich.appendChild(kommentarliste);
+        kommentarform.insertAdjacentElement('afterend', kommentarBereich);
+    }
+
+    const kommentarliste = document.getElementById('projekt-kommentar-liste');
+
+    if (!kommentarliste) {
+        return;
+    }
+
+    kommentarliste.innerHTML = '';
+
+    if (!kommentare.length) {
+        const leererEintrag = document.createElement('li');
+        leererEintrag.textContent = 'Noch keine Kommentare vorhanden.';
+        kommentarliste.appendChild(leererEintrag);
+        return;
+    }
+
+    kommentare.forEach(kommentar => {
+        const eintrag = document.createElement('li');
+        const text = document.createElement('p');
+        const meta = document.createElement('small');
+
+        text.textContent = kommentar.text;
+
+        const sterneText = typeof kommentar.sterne === 'number' && !Number.isNaN(kommentar.sterne)
+            ? 'Bewertung: ' + kommentar.sterne + '/5'
+            : 'Bewertung: keine Angabe';
+        const datumText = kommentar.erstelltAm ? ' | ' + new Date(kommentar.erstelltAm).toLocaleString('de-DE') : '';
+
+        meta.textContent = sterneText + datumText;
+
+        eintrag.appendChild(text);
+        eintrag.appendChild(meta);
+        kommentarliste.appendChild(eintrag);
+    });
+}
+
+function getKommentarSpeicherSchluessel(projektId) {
+    return 'projekt-kommentare-' + (projektId || 'ohne-id');
+}
+
+function ladeKommentareAusLocalStorage(speicherSchluessel) {
+    const gespeicherteWerte = window.localStorage.getItem(speicherSchluessel);
+
+    if (!gespeicherteWerte) {
+        return [];
+    }
+
+    try {
+        const geparst = JSON.parse(gespeicherteWerte);
+        return Array.isArray(geparst) ? geparst : [];
+    } catch (error) {
+        console.error('Fehler beim Laden der gespeicherten Kommentare:', error);
+        return [];
+    }
 }
